@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from bson import ObjectId
 # import pymongo
-client = MongoClient('mongodb+srv://ravikant-pandey:TCA2209python@cluster0.mp4ybfo.mongodb.net/')
+client = MongoClient('mongodb+srv://<db_username>:<db_password>@cluster0.mp4ybfo.mongodb.net/')
 
 #  Not a good idea to include id and password in code file
 db = client.yt_manager # Connect to "yt_manager"

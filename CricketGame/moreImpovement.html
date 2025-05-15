@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket Game || By Pandey</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #0f0f0f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+
+        .center {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 20px;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .bat-btn:hover {
+            background: rgb(129, 117, 117);
+
+        }
+
+        .ball-btn:hover {
+            background: red;
+        }
+
+        .stump-btn:hover {
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Cricket Game (Bat, Ball and Stump)</h1>
+        <div class="center">
+
+            <!-- Bat Button -->
+            <button class="btn bat-btn" onclick="
+                let computerChoice = generateComputerChoice(); 
+                let resultMsg = getResult('Bat', computerChoice);
+                showResult('Bat',computerChoice,resultMsg)
+            ">
+                <span>🏏 Bat</span>
+            </button>
+
+            <!-- Ball Button -->
+            <button class="btn ball-btn" onclick="
+                let computerChoice = generateComputerChoice(); 
+                let resultMsg = getResult('Ball', computerChoice);
+                showResult('Ball',computerChoice,resultMsg)
+            ">
+                <span>🏐 Ball</span>
+            </button>
+
+            <!-- Stump Button -->
+            <button class="btn stump-btn" onclick="
+                let computerChoice = generateComputerChoice(); 
+                let resultMsg = getResult('Stump', computerChoice);
+                showResult('Stump',computerChoice,resultMsg)
+            ">
+                <span>🧱 Stump</span>
+            </button>
+
+        </div>
+    </div>
+
+    <script>
+        const getResult = (userMove, computerMove) => {
+            if (userMove === "Bat") {
+                if (computerMove === 'Ball') return 'User Won..';
+                else if (computerMove === 'Stump') return 'Computer Won...';
+                else return 'Match Draw...';
+            } else if (userMove === "Ball") {
+                if (computerMove === 'Stump') return 'User Won..';
+                else if (computerMove === 'Bat') return 'Computer Won...';
+                else return 'Match Draw...';
+            } else {
+                if (computerMove === 'Bat') return 'User Won...';
+                else if (computerMove === 'Ball') return 'Computer Won...';
+                else return 'Match Draw...';
+            }
+        }
+
+        const generateComputerChoice = () => {
+            const randomNumber = Math.floor(Math.random() * 3); // 0, 1, 2
+            if (randomNumber === 0) return 'Bat';
+            else if (randomNumber === 1) return 'Ball';
+            else return 'Stump';
+        }
+
+        // show result
+        const showResult = (userMove,computerMove, result) => {
+            alert(`You have chosen ${userMove}.\nComputer Choice: ${computerMove}\n-------------------------\n${result}`);
+        }
+    </script>
+</body>
+</html>

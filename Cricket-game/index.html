@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Bat Ball Stump Game</h1>
+    <diV class="center">
+      <button class="btn bat-btn" onclick="
+      let computerChoice = generateComputerChoice();
+      let resultMsg = getResult('Bat', computerChoice);
+      showResult('Bat', computerChoice, resultMsg);
+      "><img src="assets/bat.png" alt="Bat"></button>
+
+      <button class="btn ball-btn" onclick="
+      computerChoice = generateComputerChoice();
+      resultMsg = getResult('Ball', computerChoice);
+      showResult('Ball', computerChoice, resultMsg);
+      "><img src="assets/ball.png" alt="Ball"></button>
+
+      <button class="btn stump-btn" onclick="
+      computerChoice = generateComputerChoice();
+      resultMsg = getResult('Stump', computerChoice);
+      showResult('Stump', computerChoice, resultMsg);
+      "><img src="assets/stump.png" alt="Stump"></button>
+    </diV>
+    <div class="box">
+      <h3 id="user-move">
+      </h3>
+      <h3 id="computer-move"></h3>
+      <h3 id="result"></h3>
+      <h3 id="score"></h3>
+    </diV>
+
+  <button class="btn reset-btn" onclick="
+                localStorage.clear();
+                resetScore(); 
+                alert('Successfully Reset ✅.');
+            ">Reset Score 🔄</button>
+
+  <script src="app.js"></script>
+  </div>
+</body>
+
+</html>

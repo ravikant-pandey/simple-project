@@ -1,0 +1,158 @@
+/* General body styling */
+body {
+    background-color: #212121;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container box */
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    background-color: #2b2b2b;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+/* Heading styling */
+#main-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #00ffcc;
+    margin-bottom: 30px;
+}
+
+/* Form layout with wrap */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Text input takes full width */
+#todo-input {
+    flex: 1 1 100%;
+}
+
+/* Date and time input side-by-side */
+#todo-date,
+#todo-time {
+    flex: 1 1 45%;
+}
+
+/* Button takes full width */
+form button {
+    flex: 1 1 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #00ffcc;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #00ccaa;
+}
+
+/* Common styling for all inputs */
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #383838;
+    color: white;
+}
+
+/* Todo item container */
+#todo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Individual todo item box */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.todo-item:hover {
+    transform: scale(1.02);
+}
+
+/* Todo item text */
+.todo-item span {
+    flex: 1;
+    margin: 0 10px;
+    word-break: break-word;
+}
+
+/* Delete button in todo items */
+.todo-item button {
+    background-color: #ff4c4c;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.todo-item button:hover {
+    background-color: #e04343;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    form {
+        flex-direction: column;
+    }
+
+    #todo-date,
+    #todo-time {
+        flex: 1 1 100%;
+    }
+
+    .todo-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .todo-item span,
+    .todo-item button {
+        margin-top: 10px;
+    }
+}
+
+
+#delete-button {
+    background-color: #ff4c4c;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#delete-button:hover {
+    background-color: #e04343;
+}
